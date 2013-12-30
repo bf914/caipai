@@ -1,0 +1,528 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>智能选菜，让选菜更简单 </title><meta content="www.meishij.net" name="author" />
+	<link rel="stylesheet" type="text/css" media="all" href="css/ss_base.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="css/header6.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="css/footer6.css"/>	
+	<link rel="stylesheet" type="text/css" media="all" href="css/smarty_search.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="css/tipswindown.css"/>
+	<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.soChange-min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>	
+	<script type="text/javascript" src="js/smt.js"></script>
+	<script type="text/javascript" src="js/tipswindown.js"></script>
+	<!--[if IE 6]><script type="text/javascript">document.execCommand("BackgroundImageCache", false, true);</script><![endif]-->
+</head>
+
+<body>
+	<div id="PlanePreviewB">
+		<div id="PlaneInfoB">loading...</div>
+	</div>
+	<div id="PlanePreview">
+		<div id="PlaneInfo">loading...</div>
+	</div>
+	<div id="fullbg1"></div>
+	<div id="custmize_urright">
+		<div id="custmize_urright_wraper"></div>
+		<div id="custmize_urright_wrap"></div>
+	</div>
+	<div class="header" id="header">
+		<div class="topbar" id="site-nav">
+			<div class="topbar_wrapper" id="site-nav-bd">
+				<ul class="topbar_links">
+					<li><a href="http://www.meishij.net/" class="current">菜谱</a></li><li>•</li>
+					<li><a href="http://www.meishij.net/jiankang/">健康</a></li><li>•</li>
+					<li><a href="http://i.meishi.cc/">空间</a></li><li>•</li>
+					<li><a href="http://so.meishi.cc/">搜索</a></li>
+				</ul>
+			
+				<ul class="topbar_tools">
+					<script src='http://www.meishij.net/ajax/loginheader6.php'></script>
+					<li class="topbar_tools_li">
+						<a target="_blank" href="http://www.meishij.net/message.php" class="topbar_link">访客留言</a>
+					</li>					
+					<li class="topbar_tools_li">
+						<a href="javascript:void(0)" onclick="addfavorite();return false;" class="topbar_link">收藏本站</a>
+					</li>
+					<li class="topbar_nav topbar_tools_li" id="topbar_nav">
+						<div class="topbar_nav_info">
+							<div style="" id="topbar_nav_con">
+								<dl class="clearfix">
+									<dt><a href="http://www.meishij.net/" class="current">菜谱</a></dt>
+									<dd><a href="http://www.meishij.net/chufang/diy/">家常菜谱</a></dd>
+									<dd><a href="http://www.meishij.net/china-food/caixi/">中华菜系</a></dd>
+									<dd><a href="http://www.meishij.net/chufang/diy/guowaicaipu1/">外国菜谱</a></dd>
+									<dd><a href="http://www.meishij.net/china-food/xiaochi/">各地小吃</a></dd>
+									<dd><a href="http://www.meishij.net/shicai/">食材百科</a></dd>
+									<dd><a href="http://www.meishij.net/pengren/">厨房百科</a></dd>
+								</dl>
+								<dl class="clearfix">
+									<dt><a href="http://www.meishij.net/jiankang/">健康</a></dt>
+									<dd><a href="http://www.meishij.net/jiankang/shipinanquan/">食品安全</a></dd>
+									<dd><a href="http://www.meishij.net/jiankangzhinan/">健康指南</a></dd>
+									<dd><a href="http://www.meishij.net/yaoshanshiliao/">食疗药膳</a></dd>
+									<dd><a href="http://www.meishij.net/wenhua/">饮食文化</a></dd>
+									<dd><a href="http://www.meishij.net/yunfu/">孕妇专区</a></dd>
+								</dl>
+								<dl class="clearfix">
+									<dt><a href="http://i.meishi.cc/">空间</a></dt>
+									<dd><a href="http://i.meishi.cc/home.php">我的首页</a></dd>
+									<dd class="w2"><a href="http://i.meishi.cc/">我的美食空间</a></dd>
+									<dd><a href="http://i.meishi.cc/explore/hot.php">推荐</a></dd>
+									<dd><a href="http://i.meishi.cc/wall.php">发现</a></dd>
+									<dd><a href="http://i.meishi.cc/groups/">群组</a></dd>
+								</dl>
+								<dl class="clearfix bb0">
+									<dt><!--a href="http://tuan.meishi.cc/">美食团</a--><a href="http://so.meishi.cc/">快速搜索</a><a href="http://www.meishij.net/list.php?nt=2">最新菜谱</a></dt>
+									<dt><a href="http://top.meishi.cc/">美食排行榜</a><a href="http://www.meishij.net/chishenme/">智能选菜</a><a href="http://www.meishij.net/shicai/new.php" style="padding-right:0;">食材</a>/<a href="http://www.meishij.net/shicai/shicai_recipe.php" style="padding-right:0;">菜谱</a></dt>
+								</dl>
+							</div>
+						</div>
+						<span class="topbar_nav_span">网站导航</span>
+					</li>
+				</ul>
+					<div class="topbar_wrapper_right"></div>
+			</div>
+		</div>
+		<div id="msj_top_ad" class="top_ad1" style="width:990px;margin:0px auto;">
+			<script type="text/javascript">BAIDU_CLB_fillSlot("206520");</script>
+		</div>
+	<div class="banner">
+		<div class="banner_wrapper">
+			<a href="http://www.meishij.net/" class="logo"></a>
+			<form class="search" action="http://so.meishi.cc/">
+			<input type="text" class="text" name="q" defaultval="这是一个神奇的搜索"  x-webkit-speech value="这是一个神奇的搜索" autocomplete="off" onFocus="if(this.value=='这是一个神奇的搜索'){this.value='';}$(this).css('color','#000');" onBlur="if(this.value==''){this.value='这是一个神奇的搜索';$(this).css('color','#999');}" href="/ajax/ajaxtitle.php" autocomplete="off" id="inputString"/><input type="submit" class="submit" value=""/>
+			<dl>
+				<dt>当季热门食材：</dt>
+				<dd><a href="http://so.meishi.cc/?q=%E7%89%9B%E8%82%89" target="_blank">牛肉</a></dd><dd><a href="http://so.meishi.cc/?q=%E5%9C%9F%E8%B1%86" target="_blank">土豆</a></dd><dd><a href="http://so.meishi.cc/?q=%E7%8C%AA%E8%82%89" target="_blank">猪肉</a></dd><dd><a href="http://so.meishi.cc/?q=%E9%B8%A1" target="_blank">鸡</a></dd><dd><a href="http://so.meishi.cc/?q=%E8%B1%86%E8%85%90" target="_blank">豆腐</a></dd><dd><a href="http://so.meishi.cc/?q=%E9%B8%A1%E8%9B%8B" target="_blank">鸡蛋</a></dd><dd><a href="http://so.meishi.cc/?q=%E8%8C%84%E5%AD%90" target="_blank">茄子</a></dd>
+			</dl>
+			</form>
+			<div class="banner_right_bg"></div>
+		</div>
+	</div>
+			<div class="nav">
+		<div class="nav_wrapper">
+			<div class="suggestionsBox" id="suggestions" style="display: none;"><ul class="suggestionList" id="autoSuggestionsList"></ul></div>
+			<div class="nav_wraper_left"></div>
+			<div class="nav_wraper_right"></div>
+			<div class="nav_cp" id="nav_cp">
+			<a style="display:block; width:152px; height:52px;" href="http://www.meishij.net/"></a>
+				<div class="nav_cp_more">
+					<a href="http://www.meishij.net/jiankang/" class="health"></a>
+					<a href="http://i.meishi.cc/" class="space"></a>
+					<!--a href="http://tuan.meishi.cc/" class="tuan"></a-->
+					<a href="http://so.meishi.cc/" class="tuan"></a>
+				</div>
+			</div>
+			
+			<ul class="nav_links">
+				<li>
+					<a target="_blank" href="http://www.meishij.net/chufang/diy/" class="jccp nav_link_item"></a>
+					<div class="nav_links_list nav_links_list_jccp">
+						<div class="nav_links_list1"></div>
+						<div class="nav_links_list2"></div>
+						<div class="nav_links_list3">
+							<ul class="clearfix">
+<li><a title="家常菜" href="http://www.meishij.net/chufang/diy/jiangchangcaipu/">家常菜</a></li>
+<li><a title="私家菜" href="http://www.meishij.net/chufang/diy/sijiacai/">私家菜</a></li>
+<li><a title="凉菜" href="http://www.meishij.net/chufang/diy/langcaipu/">凉菜</a></li>
+<li><a title="热菜" href="http://www.meishij.net/chufang/diy/recaipu/">热菜</a></li>
+<li><a title="汤粥" href="http://www.meishij.net/chufang/diy/tangbaocaipu/">汤粥</a></li>
+<li><a title="海鲜" href="http://www.meishij.net/chufang/diy/haixian/">海鲜</a></li>
+<li><a title="素食" href="http://www.meishij.net/chufang/diy/sushi/">素食</a></li>
+<li><a title="微波炉" href="http://www.meishij.net/chufang/diy/weibolucaipu/">微波炉</a></li>
+<li><a title="火锅底料" href="http://www.meishij.net/chufang/diy/huoguo/">火锅底料</a></li>
+<li><a title="酱料沾料" href="http://www.meishij.net/chufang/diy/jiangliaozhanliao/">酱料蘸料</a></li>
+<li><a title="糕点主食" href="http://www.meishij.net/chufang/diy/gaodianxiaochi/">糕点主食</a></li>
+<li><a title="干果制作" href="http://www.meishij.net/chufang/diy/ganguo/">干果制作</a></li>
+<li><a title="甜品点心" href="http://www.meishij.net/chufang/diy/tianpindianxin/">甜品点心</a></li>
+<li><a title="卤酱" href="http://www.meishij.net/chufang/diy/rujiangcai/">卤酱</a></li>
+<li><a title="时尚饮品" href="http://www.meishij.net/chufang/diy/yinpin/">时尚饮品</a></li>
+<li><a title="食疗" href="http://www.meishij.net/chufang/diy/shiliaocaipu/">食疗</a></li>
+<li><a title="药膳偏方" href="http://www.meishij.net/chufang/diy/yaoshan/">药膳偏方</a></li>
+<li><a title="老年人" href="http://www.meishij.net/chufang/diy/laonian/">老年人</a></li>
+<li><a title="孕妇" href="http://www.meishij.net/chufang/diy/yunfu/">孕妇</a></li>
+<li><a title="产妇" href="http://www.meishij.net/chufang/diy/chanfu/">产妇</a></li>
+<li><a title="宝宝食谱-婴儿食谱" href="http://www.meishij.net/chufang/diy/baobaocaipu/">宝宝食谱-婴</a></li>
+<li><a title="美容" href="http://www.meishij.net/chufang/diy/meirong/">美容</a></li>
+<li><a title="瘦身" href="http://www.meishij.net/chufang/diy/shoushen/">瘦身</a></li>
+<li><a title="早餐" href="http://www.meishij.net/chufang/diy/zaocan/">早餐</a></li>
+<li><a title="午餐" href="http://www.meishij.net/chufang/diy/wucan/">午餐</a></li>
+<li><a title="晚餐" href="http://www.meishij.net/chufang/diy/wancan/">晚餐</a></li>
+								</ul>
+							</div>
+							<div class="nav_links_list4"></div>
+						</div>
+					</li>
+					<li><a target="_blank" href="http://www.meishij.net/china-food/caixi/" class="zhcx nav_link_item"></a>
+						<div class="nav_links_list nav_links_list_wgcp">
+							<div class="nav_links_list1"></div>
+							<div class="nav_links_list2"></div>
+							<div class="nav_links_list3">
+								<ul class="clearfix">
+<li><a title="川菜" href="http://www.meishij.net/china-food/caixi/chuancai/">川菜</a></li>
+ 		 <li><a title="鲁菜" href="http://www.meishij.net/china-food/caixi/lucai/">鲁菜</a></li>
+ 		 <li><a title="粤菜" href="http://www.meishij.net/china-food/caixi/yuecai/">粤菜</a></li>
+ 		 <li><a title="湘菜" href="http://www.meishij.net/china-food/caixi/xiangcai/">湘菜</a></li>
+ 		 <li><a title="闽菜" href="http://www.meishij.net/china-food/caixi/mincai/">闽菜</a></li>
+ 		 <li><a title="浙菜" href="http://www.meishij.net/china-food/caixi/zhecai/">浙菜</a></li>
+ 		 <li><a title="苏菜" href="http://www.meishij.net/china-food/caixi/sucai/">苏菜</a></li>
+ 		 <li><a title="徽菜" href="http://www.meishij.net/china-food/caixi/huicai/">徽菜</a></li>
+ 		 <li><a title="京菜" href="http://www.meishij.net/china-food/caixi/jingcai/">京菜</a></li>
+ 		 <li><a title="沪菜" href="http://www.meishij.net/china-food/caixi/hucai/">沪菜</a></li>
+ 		 <li><a title="豫菜" href="http://www.meishij.net/china-food/caixi/yucai/">豫菜</a></li>
+ 		 <li><a title="湖北菜" href="http://www.meishij.net/china-food/caixi/hubeicai/">湖北菜</a></li>
+ 		 <li><a title="东北菜" href="http://www.meishij.net/china-food/caixi/dongbeicai/">东北菜</a></li>
+ 		 <li><a title="西北菜" href="http://www.meishij.net/china-food/caixi/xibeicai/">西北菜</a></li>
+ 		 <li><a title="云贵菜" href="http://www.meishij.net/china-food/caixi/yuguicai/">云贵菜</a></li>
+ 		 <li><a title="清真菜" href="http://www.meishij.net/china-food/caixi/qingzhencai/">清真菜</a></li>
+ 		 <li><a title="山西菜" href="http://www.meishij.net/china-food/caixi/shancicai/">山西菜</a></li>
+ 		 <li><a title="江西菜" href="http://www.meishij.net/china-food/caixi/jiangxicai/">江西菜</a></li>
+ 		 <li><a title="港台菜" href="http://www.meishij.net/china-food/caixi/gangtai/">港台菜</a></li>
+ 		 <li><a title="其它菜" href="http://www.meishij.net/china-food/caixi/other/">其它菜</a></li>	
+								</ul>
+							</div>
+							<div class="nav_links_list4"></div>
+						</div>
+					</li>
+					<li><div style="position:absolute;right:5px;top:-5px;height:16px;width:21px;"><img src="http://static.meishij.net/images/new_cn.gif"></div><a href="http://www.meishij.net/hongpei/" class="hp nav_link_item"></a>
+						<div class="nav_links_list nav_links_list_hp">
+							<div class="nav_links_list1"></div>
+							<div class="nav_links_list2"></div>
+							<div class="nav_links_list3">
+								<ul class="clearfix">
+<li><a title="蛋糕面包" href="http://www.meishij.net/hongpei/dangaomianbao/">蛋糕面包</a></li>
+<li><a title="饼干配方" href="http://www.meishij.net/hongpei/bingganpeifang/">饼干配方</a></li>
+<li><a title="甜品点心" href="http://www.meishij.net/hongpei/tianpindianxin/">甜品点心</a></li>
+<li><a title="烘焙工具" href="http://www.meishij.net/hongpei/hongpeigongju/">烘焙工具</a></li>
+<li><a title="烘焙常识" href="http://www.meishij.net/hongpei/hongpeichangshi/">烘焙常识</a></li>
+<li><a title="烘焙原料" href="http://www.meishij.net/hongpei/hongpeiyuanliao/">烘焙原料</a></li>
+								</ul>
+							</div>
+							<div class="nav_links_list4"></div>
+						</div>
+					</li>
+					<li><a target="_blank" href="http://www.meishij.net/chufang/diy/guowaicaipu1/" class="wgcp nav_link_item"></a>
+					<div class="nav_links_list nav_links_list_zhcx">
+							<div class="nav_links_list1"></div>
+							<div class="nav_links_list2"></div>
+							<div class="nav_links_list3">
+								<ul class="clearfix">
+
+<li><a title="餐前小吃" href="http://www.meishij.net/chufang/diy/guowaicaipu1/canqianxiaochi/">餐前小吃</a></li>
+<li><a title="汤品" href="http://www.meishij.net/chufang/diy/guowaicaipu1/tangpin/">汤品</a></li>
+<li><a title="主菜" href="http://www.meishij.net/chufang/diy/guowaicaipu1/zhucai/">主菜</a></li>
+<li><a title="主食" href="http://www.meishij.net/chufang/diy/guowaicaipu1/zhushi/">主食</a></li>
+<li><a title="甜点" href="http://www.meishij.net/chufang/diy/guowaicaipu1/tiandian/">甜点</a></li>
+<li style="width:260px;"><a title="饮品" href="http://www.meishij.net/chufang/diy/guowaicaipu1/yinpin/">饮品</a></li>
+<li><a title="日本料理" href="http://www.meishij.net/chufang/diy/guowaicaipu1/japan/">日本料理</a></li>
+<li><a title="韩国料理" href="http://www.meishij.net/chufang/diy/guowaicaipu1/hanguo/">韩国料理</a></li>
+<li><a title="美国家常菜" href="http://www.meishij.net/chufang/diy/guowaicaipu1/usa/">美国家常菜</a></li>
+<li><a title="意大利餐" href="http://www.meishij.net/chufang/diy/guowaicaipu1/yidali/">意大利餐</a></li>
+<li><a title="法国菜" href="http://www.meishij.net/chufang/diy/guowaicaipu1/faguo/">法国菜</a></li>
+<li><a title="墨西哥菜" href="http://www.meishij.net/chufang/diy/guowaicaipu1/moxige/">墨西哥菜</a></li>
+<li><a title="东南亚菜" href="http://www.meishij.net/chufang/diy/guowaicaipu1/dongnanya/">东南亚菜</a></li>
+<li><a title="澳大利亚菜" href="http://www.meishij.net/chufang/diy/guowaicaipu1/aozhou/">澳大利亚菜</a></li>
+<li><a title="其他国家" href="http://www.meishij.net/chufang/diy/guowaicaipu1/other/">其他国家</a></li>
+<li><a title="西餐面点" href="http://www.meishij.net/chufang/diy/guowaicaipu1/ccmd/">西餐面点</a></li>
+								</ul>
+							</div>
+							<div class="nav_links_list4"></div>
+						</div>
+					</li>
+					<li><a target="_blank" href="http://www.meishij.net/china-food/xiaochi/" class="gdxc nav_link_item"></a>
+					<div class="nav_links_list nav_links_list_gdxc">
+							<div class="nav_links_list1"></div>
+							<div class="nav_links_list2"></div>
+							<div class="nav_links_list3">
+								<ul class="clearfix">
+<li><a title="北京小吃" href="http://www.meishij.net/china-food/xiaochi/beijing/">北京小吃</a></li>
+ 		 <li><a title="天津小吃" href="http://www.meishij.net/china-food/xiaochi/tianjin/">天津小吃</a></li>
+ 		 <li><a title="河北小吃" href="http://www.meishij.net/china-food/xiaochi/hebei/">河北小吃</a></li>
+ 		 <li><a title="山西小吃" href="http://www.meishij.net/china-food/xiaochi/shanxi/">山西小吃</a></li>
+ 		 <li><a title="蒙古小吃" href="http://www.meishij.net/china-food/xiaochi/menggu/">蒙古小吃</a></li>
+ 		 <li><a title="上海小吃" href="http://www.meishij.net/china-food/xiaochi/shanghai/">上海小吃</a></li>
+ 		 <li><a title="山东小吃" href="http://www.meishij.net/china-food/xiaochi/shandong/">山东小吃</a></li>
+ 		 <li><a title="江苏小吃" href="http://www.meishij.net/china-food/xiaochi/jiangsu/">江苏小吃</a></li>
+ 		 <li><a title="浙江小吃" href="http://www.meishij.net/china-food/xiaochi/zhejiang/">浙江小吃</a></li>
+ 		 <li><a title="安徽小吃" href="http://www.meishij.net/china-food/xiaochi/anhui/">安徽小吃</a></li>
+ 		 <li><a title="吉林小吃" href="http://www.meishij.net/china-food/xiaochi/jilin/">吉林小吃</a></li>
+ 		 <li><a title="辽宁小吃" href="http://www.meishij.net/china-food/xiaochi/liaoning/">辽宁小吃</a></li>
+ 		 <li><a title="陕西小吃" href="http://www.meishij.net/china-food/xiaochi/shanxii/">陕西小吃</a></li>
+ 		 <li><a title="新疆小吃" href="http://www.meishij.net/china-food/xiaochi/xinjiang/">新疆小吃</a></li>
+ 		 <li><a title="宁夏小吃" href="http://www.meishij.net/china-food/xiaochi/ningxia/">宁夏小吃</a></li>
+ 		 <li><a title="甘肃小吃" href="http://www.meishij.net/china-food/xiaochi/gansu/">甘肃小吃</a></li>
+ 		 <li><a title="青海小吃" href="http://www.meishij.net/china-food/xiaochi/qinghai/">青海小吃</a></li>
+ 		 <li><a title="湖北小吃" href="http://www.meishij.net/china-food/xiaochi/hubei/">湖北小吃</a></li>
+ 		 <li><a title="湖南小吃" href="http://www.meishij.net/china-food/xiaochi/hunan/">湖南小吃</a></li>
+ 		 <li><a title="河南小吃" href="http://www.meishij.net/china-food/xiaochi/henan/">河南小吃</a></li>
+ 		 <li><a title="江西小吃" href="http://www.meishij.net/china-food/xiaochi/jiangxi/">江西小吃</a></li>
+ 		 <li><a title="重庆小吃" href="http://www.meishij.net/china-food/xiaochi/chongqing/">重庆小吃</a></li>
+ 		 <li><a title="四川小吃" href="http://www.meishij.net/china-food/xiaochi/sichuan/">四川小吃</a></li>
+ 		 <li><a title="云南小吃" href="http://www.meishij.net/china-food/xiaochi/yunnan/">云南小吃</a></li>
+ 		 <li><a title="贵州小吃" href="http://www.meishij.net/china-food/xiaochi/guizhou/">贵州小吃</a></li>
+ 		 <li><a title="西藏小吃" href="http://www.meishij.net/china-food/xiaochi/xizang/">西藏小吃</a></li>
+ 		 <li><a title="广东小吃" href="http://www.meishij.net/china-food/xiaochi/guangdong/">广东小吃</a></li>
+ 		 <li><a title="福建小吃" href="http://www.meishij.net/china-food/xiaochi/fujian/">福建小吃</a></li>
+ 		 <li><a title="广西小吃" href="http://www.meishij.net/china-food/xiaochi/guangxi/">广西小吃</a></li>
+ 		 <li><a title="海南小吃" href="http://www.meishij.net/china-food/xiaochi/hainan/">海南小吃</a></li>
+ 		 <li><a title="香港小吃" href="http://www.meishij.net/china-food/xiaochi/xianggang/">香港小吃</a></li>
+ 		 <li><a title="台湾小吃" href="http://www.meishij.net/china-food/xiaochi/taiwan/">台湾小吃</a></li>
+ 		 <li><a title="成都小吃" href="http://www.meishij.net/china-food/xiaochi/chengduxiaochi/">成都小吃</a></li>
+ 		 <li><a title="黑龙江小吃" href="http://www.meishij.net/china-food/xiaochi/heilongjiang/">黑龙江小吃</a></li>
+								</ul>
+							</div>
+							<div class="nav_links_list4"></div>
+						</div>
+					</li>
+					<li><a target="_blank" href="http://www.meishij.net/shicai/" class="scbk nav_link_item"></a>
+					<div class="nav_links_list nav_links_list_scbk" style="display:none;">
+							<div class="nav_links_list1"></div>
+							<div class="nav_links_list2"></div>
+							<div class="nav_links_list3">
+								<ul class="clearfix">
+								</ul>
+							</div>
+							<div class="nav_links_list4"></div>
+						</div>
+					</li>
+					<li><a target="_blank" href="http://www.meishij.net/pengren/" class="cfbk nav_link_item"></a>
+					<div class="nav_links_list nav_links_list_cfbk">
+							<div class="nav_links_list1"></div>
+							<div class="nav_links_list2"></div>
+							<div class="nav_links_list3">
+								<ul class="clearfix">
+<li style="width:143px;"><a style="width:143px;" title="食材的选购及保存" href="http://www.meishij.net/pengren/xuangoubaocun/">食材的选购及保存</a></li>
+ 		 <li><a title="生活妙招" href="http://www.meishij.net/pengren/chufangmiaozhao/">生活妙招</a></li>
+ 		 <li><a title="食材创意" href="http://www.meishij.net/pengren/shicaichuangyi/">食材创意</a></li>
+ 		 <li><a title="摆盘围边" href="http://www.meishij.net/pengren/baipanzhoubian/">摆盘围边</a></li>
+ 		 <li><a title="烹饪技巧" href="http://www.meishij.net/pengren/jiqiao/">烹饪技巧</a></li>
+ 		 <li><a title="美食专题" href="http://www.meishij.net/pengren/chufang/">美食专题</a></li>
+								</ul>
+							</div>
+							<div class="nav_links_list4"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+			</div><div class="main clearfix" id="content"><div class="smt_main">
+	<div class="smt_search_wraper">
+		<form class="smt_srh_form clearfix" onsubmit="return false;">
+		<div class="smt_srh_for_text"><input type="text" id="input_text" onblur="if(this.value==''){this.value='输入食材';$(this).css('color','#999');}" onfocus="if(this.value=='输入食材'){this.value='';}$(this).css('color','#000');" value="输入食材" defaultval="输入食材" style="color: rgb(153, 153, 153);"/></div>
+		<div class="smt_srh_for_submit"><input type="button" onclick="submit_randrecipe()" value="添加食材"/></div>
+		<p>多个食材输入用空格隔开，如要添加牛肉和土豆，输入牛肉 土豆</p>
+		</form>
+	</div>
+	<div class="smt_body clearfix">
+		<div class="smt_left">
+			<h2 class="smt_left_title">快速添加常用食材</h2>
+	<ul class="clearfix smt_left_ul">
+				<li class="smt_left_li">
+			<div class="smt_left_li_btn">
+				<em class="icon icon8"></em>
+				<h3>畜肉</h3>
+				<span class="arrow"></span>
+			</div>
+			<div class="smt_left_li_list"><a href="####" id="25021">猪肉</a><a href="####" id="25202">五花肉</a><a href="####" id="693">猪小排</a><a href="####" id="24997">猪肉馅</a><a href="####" id="688">猪大排</a><a href="####" id="25199">猪里脊肉</a><a href="####" id="25195">猪腿肉</a><a href="####" id="690">猪蹄</a><a href="####" id="698">猪肝</a><a href="####" id="696">猪肚</a><a href="####" id="25051">猪肠</a><a href="####" id="743">火腿</a><a href="####" id="24917">培根</a><a href="####" id="25063">牛肉</a><a href="####" id="25092">牛肉馅</a><a href="####" id="25492">牛里脊肉</a><a href="####" id="25487">牛排</a><a href="####" id="25086">羊肉</a>			</div>
+		</li>
+			<li class="smt_left_li">
+			<div class="smt_left_li_btn">
+				<em class="icon icon9"></em>
+				<h3>禽肉</h3>
+				<span class="arrow"></span>
+			</div>
+			<div class="smt_left_li_list"><a href="####" id="25124">鸡肉</a><a href="####" id="822">鸡腿</a><a href="####" id="821">鸡翅</a><a href="####" id="820">鸡胸脯肉</a><a href="####" id="823">鸡爪</a><a href="####" id="828">鸡胗</a><a href="####" id="824">鸡肝</a><a href="####" id="24881">鸡翅根</a><a href="####" id="25279">三黄鸡</a><a href="####" id="819">乌骨鸡</a><a href="####" id="24988">柴鸡</a><a href="####" id="25129">鸭肉</a><a href="####" id="842">鸭掌</a><a href="####" id="843">鸭肠</a><a href="####" id="25132">鹅肉</a><a href="####" id="863">鹅肝</a>			</div>
+		</li>
+			<li class="smt_left_li">
+			<div class="smt_left_li_btn">
+				<em class="icon icon11"></em>
+				<h3>蛋类</h3>
+				<span class="arrow"></span>
+			</div>
+			<div class="smt_left_li_list"><a href="####" id="910">鸡蛋</a><a href="####" id="914">鸭蛋</a><a href="####" id="925">咸鸭蛋</a><a href="####" id="929">鹌鹑蛋</a><a href="####" id="16219">松花蛋</a><a href="####" id="916">鸡蛋黄</a>			</div>
+		</li>
+			<li class="smt_left_li">
+			<div class="smt_left_li_btn">
+				<em class="icon icon12"></em>
+				<h3>鱼虾蟹贝</h3>
+				<span class="arrow"></span>
+			</div>
+			<div class="smt_left_li_list"><a href="####" id="932">草鱼</a><a href="####" id="953">鲫鱼</a><a href="####" id="941">鲤鱼</a><a href="####" id="986">鲈鱼</a><a href="####" id="993">鲳鱼</a><a href="####" id="25314">鳝鱼</a><a href="####" id="963">带鱼</a><a href="####" id="1064">鱿鱼</a><a href="####" id="25047">三文鱼</a><a href="####" id="25353">虾</a><a href="####" id="1795">虾仁</a><a href="####" id="1019">虾米</a><a href="####" id="1009">海虾</a><a href="####" id="1010">河虾</a><a href="####" id="1011">基围虾</a><a href="####" id="1018">小龙虾</a><a href="####" id="25349">螃蟹</a><a href="####" id="1021">海蟹</a><a href="####" id="1022">河蟹</a><a href="####" id="25359">干贝</a><a href="####" id="1042">蛤蜊</a><a href="####" id="25357">牡蛎</a><a href="####" id="1036">扇贝(鲜)</a><a href="####" id="1055">海参</a><a href="####" id="1026">鲍鱼</a>			</div>
+		</li>
+			<li class="smt_left_li">
+			<div class="smt_left_li_btn">
+				<em class="icon icon2"></em>
+				<h3>根菜类蔬菜</h3>
+				<span class="arrow"></span>
+			</div>
+			<div class="smt_left_li_list"><a href="####" id="88">土豆</a><a href="####" id="1545">胡萝卜</a><a href="####" id="178">白萝卜</a><a href="####" id="337">藕</a><a href="####" id="340">茭白</a><a href="####" id="25475">紫薯</a><a href="####" id="324">冬笋</a><a href="####" id="25189">红薯</a><a href="####" id="341">荸荠</a><a href="####" id="346">山药</a><a href="####" id="348">芋头</a>			</div>
+		</li>
+			<li class="smt_left_li">
+			<div class="smt_left_li_btn">
+				<em class="icon icon23"></em>
+				<h3>瓜果类蔬菜</h3>
+				<span class="arrow"></span>
+			</div>
+			<div class="smt_left_li_list"><a href="####" id="25222">青椒</a><a href="####" id="236">黄瓜</a><a href="####" id="25070">红椒</a><a href="####" id="219">番茄</a><a href="####" id="241">南瓜</a><a href="####" id="215">茄子</a><a href="####" id="231">冬瓜</a><a href="####" id="1557">彩椒</a><a href="####" id="218">苦瓜</a><a href="####" id="244">丝瓜</a><a href="####" id="246">西葫芦</a><a href="####" id="25523">杭椒</a>			</div>
+		</li>
+			<li class="smt_left_li">
+			<div class="smt_left_li_btn">
+				<em class="icon icon4"></em>
+				<h3>茎叶类蔬菜</h3>
+				<span class="arrow"></span>
+			</div>
+			<div class="smt_left_li_list"><a href="####" id="25538">白菜</a><a href="####" id="294">菠菜</a><a href="####" id="304">芹菜</a><a href="####" id="288">西兰花</a><a href="####" id="308">生菜</a><a href="####" id="285">卷心菜</a><a href="####" id="280">油菜</a><a href="####" id="317">莴笋</a><a href="####" id="333">芦笋</a><a href="####" id="1575">西芹</a><a href="####" id="275">小白菜</a><a href="####" id="328">百合</a><a href="####" id="1569">紫甘蓝</a><a href="####" id="286">菜花</a><a href="####" id="320">竹笋</a><a href="####" id="289">芥菜</a><a href="####" id="1566">娃娃菜</a><a href="####" id="314">茼蒿</a>			</div>
+		</li>
+			<li class="smt_left_li">
+			<div class="smt_left_li_btn">
+				<em class="icon icon22"></em>
+				<h3>豆制品</h3>
+				<span class="arrow"></span>
+			</div>
+			<div class="smt_left_li_list"><a href="####" id="114">豆腐</a><a href="####" id="132">豆腐干</a><a href="####" id="1538">红豆沙</a><a href="####" id="25527">北豆腐</a><a href="####" id="127">豆腐皮</a><a href="####" id="129">腐竹</a><a href="####" id="25526">南豆腐</a><a href="####" id="131">千张</a><a href="####" id="119">豆浆</a>			</div>
+		</li>
+			<li class="smt_left_li">
+			<div class="smt_left_li_btn">
+				<em class="icon icon5"></em>
+				<h3>菌藻</h3>
+				<span class="arrow"></span>
+			</div>
+			<div class="smt_left_li_list"><a href="####" id="452">香菇</a><a href="####" id="441">金针菇</a><a href="####" id="1604">杏鲍菇</a><a href="####" id="443">口蘑</a><a href="####" id="1587">茶树菇</a><a href="####" id="448">平菇</a><a href="####" id="434">草菇</a><a href="####" id="24805">真姬菇</a><a href="####" id="24818">蟹味菇</a><a href="####" id="25183">紫菜</a><a href="####" id="446">木耳</a><a href="####" id="457">银耳</a><a href="####" id="462">海带</a><a href="####" id="1607">竹荪</a>			</div>
+		</li>
+			<li class="smt_left_li">
+			<div class="smt_left_li_btn">
+				<em class="icon icon6"></em>
+				<h3>水果</h3>
+				<span class="arrow"></span>
+			</div>
+			<div class="smt_left_li_list"><a href="####" id="546">枣</a><a href="####" id="597">柠檬</a><a href="####" id="565">葡萄干</a><a href="####" id="469">苹果</a><a href="####" id="608">芒果</a><a href="####" id="583">草莓</a><a href="####" id="611">香蕉</a><a href="####" id="599">菠萝</a><a href="####" id="609">木瓜</a><a href="####" id="17588">山楂</a><a href="####" id="488">梨</a><a href="####" id="557">樱桃</a><a href="####" id="584">橙</a><a href="####" id="582">猕猴桃</a><a href="####" id="603">桂圆</a><a href="####" id="17579">蓝莓</a><a href="####" id="1622">火龙果</a><a href="####" id="626">西瓜</a><a href="####" id="529">黄桃</a>			</div>
+		</li>
+			<li class="smt_left_li">
+			<div class="smt_left_li_btn">
+				<em class="icon icon3"></em>
+				<h3>坚果种子</h3>
+				<span class="arrow"></span>
+			</div>
+			<div class="smt_left_li_list"><a href="####" id="25256">花生</a><a href="####" id="25258">莲子</a><a href="####" id="25586">核桃</a><a href="####" id="647">杏仁</a><a href="####" id="653">腰果</a><a href="####" id="643">松子仁</a><a href="####" id="631">白果</a><a href="####" id="638">栗子</a><a href="####" id="21262">红腰豆</a>			</div>
+		</li>
+			<li class="smt_left_li">
+			<div class="smt_left_li_btn">
+				<em class="icon icon1"></em>
+				<h3>谷类</h3>
+				<span class="arrow"></span>
+			</div>
+			<div class="smt_left_li_list"><a href="####" id="31">大米</a><a href="####" id="50">糯米</a><a href="####" id="24723">芝麻</a><a href="####" id="25363">玉米</a><a href="####" id="86">薏米</a><a href="####" id="74">小米</a><a href="####" id="48">黑米</a><a href="####" id="24691">燕麦</a><a href="####" id="32">粳米</a><a href="####" id="24623">紫米</a>			</div>
+		</li>
+			<li class="smt_left_li">
+			<div class="smt_left_li_btn">
+				<em class="icon icon10"></em>
+				<h3>乳制品</h3>
+				<span class="arrow"></span>
+			</div>
+			<div class="smt_left_li_list"><a href="####" id="872">牛奶</a><a href="####" id="900">奶油</a><a href="####" id="889">奶酪</a><a href="####" id="24743">奶粉</a><a href="####" id="903">黄油</a><a href="####" id="24669">炼乳</a><a href="####" id="906">酥油</a><a href="####" id="1319">巧克力</a><a href="####" id="24638">焦糖</a>			</div>
+		</li>
+	</ul>		</div>
+		<div class="smt_right">
+			<div class="smt_chosed" id="smt_chosed" style="display:none;">
+				<span class="smt_chosed_title">请选择食材：</span>
+				<a href="####" class="smt_clear_sc">清空已选食材</a>
+				<a href="####" class="smt_ch_btn"></a>
+				<form id="smt_form2" method="POST" action="http://www.meishij.net/chishenme/build_up.php" style="display:none;">
+					<input type="hidden" value="" name="shicai_ids" id="smt_form_input_hidden" />
+				</form>
+			</div>
+			<div id="randrecipe_result"></div>
+			<div class="smt_guide" id="smt_guide">
+				<ul>
+					<li class="step1"><span class="step1">1</span><span class="step2">2</span><span class="step3">3</span><a href="####"></a></li>
+					<li class="step2"><span class="step1">1</span><span class="step2">2</span><span class="step3">3</span><a href="####"></a></li>
+					<li class="step3"><span class="step1">1</span><span class="step2">2</span><span class="step3">3</span></li>
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+</div>
+</div>
+<div class="footer" id="footer">
+	<div class="footer_ad">
+		<a target="_blank" href="http://sj.meishi.cc/?to=guanjia"><img src="http://static.meishij.net/images/get/gjad_200x61.gif"/></a><a target="_blank" href="http://sj.meishi.cc/sj.php?to=android"><img src="http://static.meishij.net/images/new_android_ad.gif"/></a><a target="_blank" href="http://adapi.meishij.net/e/public/ClickAd?adid=147"><img src="http://static.meishij.net/images/new_iphone_ad.gif"/></a><a target="_blank" href="http://adapi.meishij.net/e/public/ClickAd?adid=152"><img src="http://static.meishij.net/images/new_wp7_ad.gif"/></a>
+	</div>
+	<ul class="footer_main clearfix">
+		<li class="li1">
+			<dl>
+				<dt class="kjcp">快捷菜谱</dt>
+				<dd><a href="http://www.meishij.net/chishenme/">智能选菜</a></dd>
+				<dd><a href="http://top.meishi.cc/">排行榜</a></dd>
+				<dd><a href="http://www.meishij.net/latest_list.php">菜谱 / </a><a href="http://www.meishij.net/shicai/new.php">食材</a></dd>
+				<dd><a href="http://www.meishij.net/pengren/chufang/">美食专题</a></dd>
+				<dd><a href="http://reply.meishij.net/email.php">邮件订阅</a></dd>
+			</dl>
+		</li>
+		
+		<li class="li2">
+			<dl>
+				<dt class="kjts">空间特色</dt>
+				<dd><a href="http://i.meishi.cc/new/cook.php">上传菜谱</a></dd>
+				<dd><a href="http://i.meishi.cc/explore/hot.php">空间推荐</a></dd>
+				<dd><a href="http://i.meishi.cc/wall.php">空间发现</a></dd>
+			</dl>
+		</li>
+		<li class="footer_logo">
+			<a href="/"><img src="http://static.meishij.net/images/footer-donghua.gif"/></a>
+		</li>
+		<li class="li3">
+			<dl>
+				<dt class="gywm">关于我们</dt>
+				<dd><a href="http://www.meishij.net/comCaltrue.html">公司简介</a></dd>
+				<dd><a href="http://www.meishij.net/com_culture.html">企业文化</a></dd>
+				<dd><a href="http://www.meishij.net/com_trends.html">公司动态</a></dd>
+				<dd><a href="http://www.meishij.net/com_statement.html">免责声明</a></dd>
+				<dd><a href="http://www.meishij.net/contactUs.html">联系我们</a></dd>
+			</dl>
+		</li>
+		
+		<li class="li4">
+			<dl>
+				<dt class="gd">更多</dt>
+				<dd><a href="http://www.meishij.net/jionUs.html">招贤纳士</a></dd>
+				<dd><a href="http://www.meishij.net/advCooperatton.html">商务合作</a></dd>
+				<dd><a href="http://www.meishij.net/map.html">网站地图</a></dd>
+				<dd><a href="http://www.meishij.net/friendLinks.html">友情链接</a></dd>
+				<dd><a href="http://www.meishij.net/message.php">访客留言</a></dd>
+			</dl>
+		</li>
+	</ul>
+	</div>
+		<div class="copyright" id="copyright">ICP证号：京ICP备11027992号/京公网安备11010802009977 Copyright © 2003-2013 MEISHIJ CO.,LTD.</div>
+		<div class="sidebar" id="sidebar">
+			<div class="sidebar_bg"></div>
+			<div class="sidebar_wrapper">
+				<a href="http://www.meishij.net/" id="sidebar_cook" class="current"></a>
+				<a href="http://www.meishij.net/jiankang/" id="sidebar_health"></a>
+				<a href="http://i.meishi.cc/" id="sidebar_space"></a>
+				<!--a href="http://tuan.meishi.cc/" id="sidebar_tuan"></a-->
+				<a href="http://so.meishi.cc/" id="sidebar_search"></a>
+			</div>
+		</div>
+
+		<script type='text/javascript'>
+			<!--//<![CDATA[
+				var ox_u = 'http://dap.pagechoice.net/dap/www/delivery/rpl.php?zoneid=5214&layerstyle=float&alignd=right&valignd=bottom&closetime=15&alignr=right&valignr=bottom&shift=5&scoll=true&wmode=opaque';
+				pc_ad_referer_url = document.referrer;
+				pc_ad_location_url = window.location;
+				var pagechoice_float_win_align = 'bottomright';
+				var pagechoice_float_win_slave_align = 'bottomright';
+				var pagechoice_float_ad_load_complete = true;
+				var pagechoice_float_win_auto_scroll_y = true;
+				var pagechoice_float_win_offset_x = 5;
+				var pagechoice_float_win_offset_y = 5;
+				if (document.context) ox_u += '&context=' + escape(document.context);
+				document.write("<scr"+"ipt type='text/javascript' src='" + ox_u + "'></scr"+"ipt>");
+			//]]>-->
+		</script>
+	</body>
+</html>
