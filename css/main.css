@@ -42,9 +42,9 @@ textarea{resize:none;overflow:auto;}
 .nav ul{height:76px;width:990px;margin:0px auto;}
 .nav ul li{display:inline-block;vertical-align:top;*display:inline;*zoom:1;height:76px;}
 .nav ul li a{display:inline-block;vertical-align:top;*display:inline;*zoom:1;padding:0px 30px;height:76px;line-height:76px;font-size:19px;color:#444;font-family:Microsoft Yahei;font-weight:bold;}
-.nav ul li a strong{font-weight:bold;display:inline-block;vertical-align:top;*display:inline;*zoom:1;height:76px;}
+.nav ul li a strong{font-weight:bold;display:inline-block;vertical-align:top;*display:inline;*zoom:1;height:72px;}
 .nav ul li a:hover{background:#fafafa;}
-.nav ul li a:hover strong{cursor:pointer;}
+.nav ul li a:hover strong{cursor:pointer;border-bottom:4px solid #ff3232;}
 .nav ul li span{display:inline-block;vertical-align:top;*display:inline;*zoom:1;padding:0px 30px;height:76px;line-height:76px;font-size:19px;color:#444;font-family:Microsoft Yahei;font-weight:bold;}
 .nav ul li span strong{font-weight:bold;display:inline-block;vertical-align:top;*display:inline;*zoom:1;height:76px;color:#999;}
 

@@ -15,12 +15,29 @@
 	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="js/list.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<!--////////////fancyBox////////////////////-->
+	<link rel="stylesheet" type="text/css" href="fancyBox/jquery.fancybox.css"/>
+	<script type="text/javascript" src="fancyBox/jquery.fancybox.pack.js"></script>
 	<meta http-equiv="X-UA-Compatible" content="IE=100">
 	<meta http-equiv="Expires" content="Tue, 31 Dec 2013 12:10:01 GMT">
 
 </head>
 <body>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox({
+			helpers : {
+				title : {
+					type : 'inside'
+				}
+			}
+		});
+	});
+</script>
 
+<div style="display: none;">
+	<div id="login" style="width:400px;height:400px;overflow:auto;">内容</div>
+</div>
 <div class="header">
 	<div class="header_c">
 		<a href="http://www.taocaipai.com/" class="logo pngFix"></a>
@@ -30,7 +47,10 @@
 				<input type="text" class="text" name="q" defaultval="请输入菜名/食材/菜单" x-webkit-speech="" value="请输入菜名/食材/菜单" autocomplete="off" onfocus="if(this.value=='请输入菜名/食材/菜单'){this.value='';}$(this).css('color','#333');" onblur="if(this.value==''){this.value='请输入菜名/食材/菜单';$(this).css('color','#999');}" href="/ajax/ajaxtitle.php" id="inputString"><input type="submit" class="submit" value="搜 索">
 			</form>
 		</div>
-		<div class="loginitem_h" style="font-size:24px;color:#eee;line-height:129px;font-family: 'Microsoft Yahei';">电话：18246683220</div>
+		<div class="loginitem_h" >
+			<p style="font-size:24px;color:#eee;line-height:59px;font-family: 'Microsoft Yahei';">电话：18246683220</p>
+			<a href="#login" class="fancybox" title="测试测试">登陆</a>
+		</div>
 	</div>
 </div>
 <div class="nav">
