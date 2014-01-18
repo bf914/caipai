@@ -14,9 +14,22 @@
 	<script type="text/javascript" src="js/smt.js"></script>
 	<script type="text/javascript" src="js/tipswindown.js"></script>
 	<!--[if IE 6]><script type="text/javascript">document.execCommand("BackgroundImageCache", false, true);</script><![endif]-->
+	<link rel="stylesheet" type="text/css" href="fancyBox/jquery.fancybox.css"/>
+	<script type="text/javascript" src="fancyBox/jquery.fancybox.pack.js"></script>
 </head>
 
 <body>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$(".img").fancybox({
+			helpers : {
+				title : {
+					type : 'inside'
+				}
+			}
+		});
+	});
+	</script>
 	<div id="PlanePreviewB">
 		<div id="PlaneInfoB">loading...</div>
 	</div>
@@ -434,8 +447,92 @@
 					<input type="hidden" value="" name="shicai_ids" id="smt_form_input_hidden" />
 				</form>
 			</div>
-			<div id="randrecipe_result"></div>
-			<div class="smt_guide" id="smt_guide">
+			<div class="smt_con1">
+				<div class="smt_con1_title">
+					<span id="reciperesult_tab_0">
+						<a href="javascript:ajax_randrecipe('25202,25199',0,1,1)" class="current">组合菜</a>
+					</span>
+					<span id="reciperesult_tab_1">
+						<a href="javascript:ajax_randrecipe('25202,25199',1,1,1)">猪里脊肉</a><em scid="25199" class="del"></em>
+					</span>
+					<span id="reciperesult_tab_2">
+						<a href="javascript:ajax_randrecipe('25202,25199',2,1,1)">五花肉</a><em scid="25202" class="del" style="display: none;"></em>
+					</span>
+					<a href="####" id="smt_clearall">清空已选食材</a>
+				</div>
+			</div>
+			<div id="reciperesult_detail">
+				<ul class="smt_rlt_ul clearfix">
+	<li class="smt_rlt_li">
+		<a rel="group" href="http://images.meishij.net/p/20110813/69a91c16e2b17b9fdb21e07878b77bd7.jpg" class="img" title="鲜剑花猪肉汤"><img width="150" height="150" src="http://images.meishij.net/p/20110813/69a91c16e2b17b9fdb21e07878b77bd7.jpg" alt="鲜剑花猪肉汤"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/zuofa/xianjianhuazhuroutang.html" class="link" title="鲜剑花猪肉汤">鲜剑花猪肉汤</a></h3>
+		<span>人气：2798</span>	</li>
+	<li class="smt_rlt_li">
+		<a rel="group" target="_blank" href="http://images.meishij.net/p/20110509/88a4e2243767c93d6e870e700dd0ec63_150x150.jpg" class="img" title="自制肉夹馍"><img width="150" height="150" src="http://images.meishij.net/p/20110509/88a4e2243767c93d6e870e700dd0ec63_150x150.jpg" alt="自制肉夹馍"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/zuofa/zizhiroujia.html" class="link" title="自制肉夹馍">自制肉夹馍</a></h3>
+		<span>作者：<a target="_blank" title="小宝的美食空间" href="http://i.meishi.cc/313564">小宝</a></span>	</li>
+	<li class="smt_rlt_li">
+		<a rel="group" target="_blank" href="http://images.meishij.net/p/20130128/a92f5079e69089f1a2308bc970e25b85_150x150.jpg" class="img" title="酿小瓜"><img width="150" height="150" src="http://images.meishij.net/p/20130128/a92f5079e69089f1a2308bc970e25b85_150x150.jpg" alt="酿小瓜"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/zuofa/niangxiaogua_4.html" class="link" title="酿小瓜">酿小瓜</a></h3>
+		<span>作者：<a target="_blank" title="赛菲的美食空间" href="http://i.meishi.cc/916721">赛菲</a></span>	</li>
+	<li class="smt_rlt_li">
+		<a rel="group" target="_blank" href="http://images.meishij.net/p/20120612/ba6630e5fa361f595bac4d9dbf5c2a56_150x150.jpg" class="img" title="香菇盒"><img width="150" height="150" src="http://images.meishij.net/p/20120612/ba6630e5fa361f595bac4d9dbf5c2a56_150x150.jpg" alt="香菇盒"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/zuofa/xiangguhe_2.html" class="link" title="香菇盒">香菇盒</a></h3>
+		<span>人气：8257&nbsp;评论：2</span>	</li>
+	<li class="smt_rlt_li">
+		<a target="_blank" href="http://www.meishij.net/china-food/caixi/xibeicai/130397.html" class="img" title="煨鱿鱼丝"><img width="150" height="150" src="http://images.meishij.net/p/20120801/85642072c5cf30ae4a1e7b0f076a5806_150x150.jpg" alt="煨鱿鱼丝"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/china-food/caixi/xibeicai/130397.html" class="link" title="煨鱿鱼丝">煨鱿鱼丝</a></h3>
+		<span>人气：755</span>	</li>
+	<li class="smt_rlt_li">
+		<a target="_blank" href="http://www.meishij.net/china-food/caixi/xiangcai/17991.html" class="img" title="清蒸甲鱼"><img width="150" height="150" src="http://images.meishij.net/p/20100521/7ba7730eef371080fb3ce9c9f0fabcba_150x150.jpg" alt="清蒸甲鱼"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/china-food/caixi/xiangcai/17991.html" class="link" title="清蒸甲鱼">清蒸甲鱼</a></h3>
+		<span>人气：70337&nbsp;评论：29</span>	</li>
+	<li class="smt_rlt_li">
+		<a target="_blank" href="http://www.meishij.net/china-food/caixi/huicai/4397.html" class="img" title="蒸香菇盒"><img width="150" height="150" src="http://images.meishij.net/p/20100527/a0890d0f11aa1b5892d748c5a5bb2d7f_150x150.jpg" alt="蒸香菇盒"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/china-food/caixi/huicai/4397.html" class="link" title="蒸香菇盒">蒸香菇盒</a></h3>
+		<span>人气：20307&nbsp;评论：1</span>	</li>
+	<li class="smt_rlt_li">
+		<a target="_blank" href="http://www.meishij.net/china-food/caixi/sucai/3665.html" class="img" title="贡淡炖鸭"><img width="150" height="150" src="http://images.meishij.net/p/20120720/80a66299de86f29ed654f125b87f7ea8_150x150.jpg" alt="贡淡炖鸭"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/china-food/caixi/sucai/3665.html" class="link" title="贡淡炖鸭">贡淡炖鸭</a></h3>
+		<span>人气：666</span>	</li>
+	<li class="smt_rlt_li">
+		<a target="_blank" href="http://www.meishij.net/china-food/caixi/xiangcai/3300.html" class="img" title="百鸟朝凤"><img width="150" height="150" src="http://images.meishij.net/p/20120719/c97ddfa8709001091c3615962f39a886_150x150.jpg" alt="百鸟朝凤"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/china-food/caixi/xiangcai/3300.html" class="link" title="百鸟朝凤">百鸟朝凤</a></h3>
+		<span>人气：846</span>	</li>
+	<li class="smt_rlt_li">
+		<a target="_blank" href="http://www.meishij.net/zuofa/wanzichi_1.html" class="img" title="港式碗仔翅"><img width="150" height="150" src="http://images.meishij.net/p/20121106/70f4edf542d5e56a37feedfe602b6518_150x150.jpg" alt="港式碗仔翅"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/zuofa/wanzichi_1.html" class="link" title="港式碗仔翅">港式碗仔翅</a></h3>
+		<span>作者：<a target="_blank" title="宅与路上的美食空间" href="http://i.meishi.cc/134916">宅与路上</a></span>	</li>
+	<li class="smt_rlt_li">
+		<a target="_blank" href="http://www.meishij.net/zuofa/ganzhengjiajiyu_7.html" class="img" title="干蒸加吉鱼"><img width="150" height="150" src="http://images.meishij.net/p/20120530/ae81d266e519b7de9e9cb41dbe55110c_150x150.jpg" alt="干蒸加吉鱼"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/zuofa/ganzhengjiajiyu_7.html" class="link" title="干蒸加吉鱼">干蒸加吉鱼</a></h3>
+		<span>人气：8144</span>	</li>
+	<li class="smt_rlt_li">
+		<a target="_blank" href="http://www.meishij.net/zuofa/jirongjinsisun_1.html" class="img" title="鸡茸金丝笋"><img width="150" height="150" src="http://images.meishij.net/p/20120529/c72f50c3b445948f2f78aa4bbb18918b_150x150.jpg" alt="鸡茸金丝笋"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/zuofa/jirongjinsisun_1.html" class="link" title="鸡茸金丝笋">鸡茸金丝笋</a></h3>
+		<span>人气：3924</span>	</li>
+	<li class="smt_rlt_li">
+		<a target="_blank" href="http://www.meishij.net/china-food/caixi/xiangcai/132902.html" class="img" title="桂花蹄筋"><img width="150" height="150" src="http://images.meishij.net/p/20120723/c75be0419e4af64480a1a2cde92b1716_150x150.jpg" alt="桂花蹄筋"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/china-food/caixi/xiangcai/132902.html" class="link" title="桂花蹄筋">桂花蹄筋</a></h3>
+		<span>人气：791</span>	</li>
+	<li class="smt_rlt_li">
+		<a target="_blank" href="http://www.meishij.net/china-food/caixi/yuecai/129712.html" class="img" title="生炊麒麟鱼"><img width="150" height="150" src="http://images.meishij.net/p/20100705/74180ae2e940422827979be28f8266e4_150x150.jpg" alt="生炊麒麟鱼"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/china-food/caixi/yuecai/129712.html" class="link" title="生炊麒麟鱼">生炊麒麟鱼</a></h3>
+		<span>人气：1549&nbsp;评论：2</span>	</li>
+	<li class="smt_rlt_li">
+		<a target="_blank" href="http://www.meishij.net/china-food/caixi/shancicai/129797.html" class="img" title="飞奴"><img width="150" height="150" src="http://images.meishij.net/p/20120727/3c4840d91faaabbf1a1985ee2f82141c_150x150.jpg" alt="飞奴"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/china-food/caixi/shancicai/129797.html" class="link" title="飞奴">飞奴</a></h3>
+		<span>人气：564</span>	</li>
+	<li class="smt_rlt_li">
+		<a target="_blank" href="http://www.meishij.net/china-food/xiaochi/guizhou/15212.html" class="img" title="太师饼"><img width="150" height="150" src="http://images.meishij.net/p/20100705/0665ad06b5a607d7f5477f3883a01e3c_150x150.jpg" alt="太师饼"></a>
+		<h3><a target="_blank" href="http://www.meishij.net/china-food/xiaochi/guizhou/15212.html" class="link" title="太师饼">太师饼</a></h3>
+		<span>人气：3440&nbsp;评论：3</span>	</li>
+				</ul>
+				<div class="ns_right_page_w">
+				<div class="ns_right_page"><ul class="ns_page_ul"><li><a class="current" href="#">1</a></li><li><a href='javascript:ajax_randrecipe("25021,743",0,2,1)'>2</a></li><li><a href='javascript:ajax_randrecipe("25021,743",0,3,1)'>3</a></li><li><a href='javascript:ajax_randrecipe("25021,743",0,4,1)'>4</a></li><li><a href='javascript:ajax_randrecipe("25021,743",0,5,1)'>5</a></li><li><a href='javascript:ajax_randrecipe("25021,743",0,2,1)' title="下一页介绍">下一页</a></li></ul></div>
+				</div>
+			</div>
+			<div class="smt_guide" id="smt_guide" style="display:none;">
 				<ul>
 					<li class="step1"><span class="step1">1</span><span class="step2">2</span><span class="step3">3</span><a href="####"></a></li>
 					<li class="step2"><span class="step1">1</span><span class="step2">2</span><span class="step3">3</span><a href="####"></a></li>
